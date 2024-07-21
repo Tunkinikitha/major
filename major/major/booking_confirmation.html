@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOOKING CONFORMATION</title>
+    <style>
+        body {
+            background-image: url(imgg.jpeg);
+            background-size: cover;
+        }
+        .container {
+            width: 40%;
+            margin: 0 auto;
+            background-color:rgba(225,225,225,0.7);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+        }
+        p {
+            font-size: 18px;
+        }
+        
+        #p{
+         color:white;
+        }
+     </style>
+     </head>
+     <body>
+         <center>
+        <a href="index.html"  id="p">Home</a>
+        <a href="booking.html" id="p">Booking</a>
+        <hr>
+        </center>
+     <div class="container">
+         <h2>Booking Details</h2>
+         <p><strong>Full Name:</strong> <span id="bookingFullName"></span></p>
+         <p><strong>Email:</strong> <span id="bookingEmail"></span></p>
+         <p><strong>Destination:</strong> <span id="bookingDestination"></span></p>
+         <p><strong>Hotels:</strong> <span id="bookingHotels"></span></p>
+         <p><strong>Number of Tickets:</strong> <span id="bookingTickets"></span></p>
+        <button class="print-button" onclick="printPage()">Print</button>
+     </div>
+     <script>
+        function printPage() {
+    
+    window.print();
+}
+    const urlParams = new URLSearchParams(window.location.search);
+    const fullName = urlParams.get('fullName');
+    const email = urlParams.get('email');
+    const destination = urlParams.get('destination');
+    const hotels = urlParams.get('hotels');
+    const tickets = urlParams.get('tickets');
+    document.getElementById('bookingFullName').textContent = fullName;
+    document.getElementById('bookingEmail').textContent = email;
+    document.getElementById('bookingDestination').textContent = destination;
+    document.getElementById('bookingHotels').textContent = hotels;
+    document.getElementById('bookingTickets').textContent = tickets;
+    </script>
+</body>
+</html>
